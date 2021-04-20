@@ -63,7 +63,8 @@ module impeller_chamber() {
     difference() {
         impeller_chamber_base();
 
-        translate([0,0,impellerChamberOuterHeight - threadLength]) metric_thread(dcMotorChamberOuterRadius*2+4.3+2.9+wallThickness, 3, threadLength, hollow=true, inner=true);
+        translate([0,0,impellerChamberOuterHeight - threadLength]) 
+            metric_thread(impellerChamberInnerRadius*2+4.4, 3, threadLength, inner=true);
         
         translate ([0,0,-0.5]) cylinder(wallThickness+1, tubeConnectorHoleRadius, tubeConnectorHoleRadius , $fn = 50);
     

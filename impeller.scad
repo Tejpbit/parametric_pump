@@ -20,8 +20,8 @@ module impeller_fin(height=10, depth=20) {
 *   shaft_radius: for adjusting the size of the hole for the shaft.
 *       The shaft hole will start scaled to 1.1 and end at 0.9 to pinch the shaft.
 */
-module impeller(height=10, radius=20, shaft_radius=1) {
-
+module impeller(height=10, radius=20, shaft_diameter=2) {
+    shaft_radius = shaft_diameter/2;
     basePlateHeight = height/5;
     finHeight = height*4/5;
     finDepth = radius*0.9;
@@ -50,4 +50,4 @@ impeller_height = impellerChamberInnerHeight*0.8;
 impeller_radius = impellerChamberInnerRadius*0.8;
 
 echo("impeller height", impeller_height )
-impeller(impeller_height, impeller_radius);
+impeller(impeller_height, impeller_radius, 2.1);
